@@ -3,23 +3,30 @@ import './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
+
+  state = {
+    persons: [
+      {name: 'Max', age: 28},
+      {name: 'Jane', age: 18},
+      {name: 'John', age: 42},
+      {name: 'Kate', age: 51},
+      {name: 'Ben', age: 16},
+      {name: 'Ken', age: 20}
+    ]
+  }
+
   render() {
-    
     return (
       <div className="App">
         <h1>Hi, I'm a react app</h1>
         <p>It is really working!</p>
-        <Person name='Max' age='28'/>
-        <Person name='Kax' age='65'/>
-        <Person name='Xam' age='350'/>
-        <Person name='LAST' age='140'> My hobbies: Racing</Person>
-        <Person />
+        <button>Switch name</button>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+        <Person name={this.state.persons[3].name} age={this.state.persons[3].age}/> 
       </div>
     );
-
-    // Section 3. Lesson 6. Using non JSX code style to create header h1 inside div
-    //return React.createElement('div', {className: 'App'}, React.createElement('h1', null,'Hi, I\'m a react app with non jsx code style'));
-
   }
 } 
 
